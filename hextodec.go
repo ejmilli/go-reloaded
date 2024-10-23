@@ -44,8 +44,3 @@ func HexToDecimal(hexa string) int {
 
 	return result // Return the final decimal value
 }
-
-	 
-	
-
-
