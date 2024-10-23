@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -49,16 +48,4 @@ func HexToDecimal(hexa string) int {
 	 
 	
 
-func main() {
-	testHexValues := []string{"1E", "A3", "FF", "10", "ABC", "INVALID", "0"} // Include some test cases
-
-	for _, hex := range testHexValues {
-			decimalValue := HexToDecimal(hex)
-			if decimalValue == -1 {
-					fmt.Printf("Hex: %s -> Result: Invalid Input\n", hex)
-			} else {
-					fmt.Printf("Hex: %s -> Decimal: %d\n", hex, decimalValue)
-			}
-	}
-}
 
