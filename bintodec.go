@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -36,23 +35,3 @@ func BinToDecimal(bina string) int {
 	return result // Return the final decimal value
 }
 
-
-func main() {
-	// Test cases
-	tests := []string{
-		"101",   // Expected output: 5
-		"111",   // Expected output: 7
-		"1001",  // Expected output: 9
-		"0010",  // Expected output: 2
-		"00001", // Expected output: 1
-		"00000", // Expected output: 0
-		"0",     // Expected output: 0
-		"1",     // Expected output: 1
-		"102",   // Expected output: Invalid input, returns -1
-	}
-
-	// Running the test cases
-	for _, test := range tests {
-		fmt.Printf("Binary: %s -> Decimal: %d\n", test, BinToDecimal(test))
-	}
-}
