@@ -2,7 +2,7 @@ package main
 
 import "strings"
 
-func PunPun(pun []string) []string {
+func removePunctuation(pun []string) []string {
 
 	// Handle punctuation at the start of the first word (index 0)
 	for len(pun[0]) > 0 && strings.Contains(".,!?;:", string(pun[0][0])) {
