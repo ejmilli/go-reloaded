@@ -12,7 +12,7 @@ if len(pun) == 0 {
 }
 
 	// Handle punctuation at the start of the first word (index 0)
-	for len(pun[0]) > 0 && strings.Contains(".,!?;:", string(pun[0][0])) {
+	for len(pun[0]) > 0 && strings.Contains("'", string(pun[0][0])) {
 		// If the first character of the first word is punctuation, remove it
 		pun[0] = pun[0][1:]
 	}
@@ -30,4 +30,6 @@ if len(pun) == 0 {
 
 	return removeTheSlice(pun)
 }
+
+
 
