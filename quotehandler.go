@@ -33,7 +33,7 @@ func QuoteHandling(input string) string {
 
 		if inQuotes {
 			// If we're inside quotes, collect characters
-	
+	 
 				quotedContent += string(char)
 	
 		} else {
