@@ -12,12 +12,12 @@ func QuoteHandling(input string) string {
 	for i := 0; i < len(input); i++ {
 		char := input[i]
 
-		// Check for the opening single quote
+		// It detects if the char is a single quote, after this it skips " inQuotes = false " part and sets " inQuotes = true"
 		if char == '\'' {
 			if inQuotes {
-				// We found a closing quote
+				// then if it  detects the closing quote, sets " inQuotes = false " 
 				inQuotes = false
-				// Add the cleaned quoted content back to the result
+				// adds the single quotes manually to ensure that the quotes are added to the result with our input which is quoteContent
 				result += "'" + strings.TrimSpace(quotedContent) + "'"
 				// Reset the quoted content for future use
 				quotedContent = ""
@@ -25,13 +25,13 @@ func QuoteHandling(input string) string {
 				// We found an opening quote
 				inQuotes = true
 			}
-			// Continue to the next character
+			// after detecting the opening quotes, continues back to the loop 
 			continue
 		}
 
 
 		if inQuotes {
-			// If we're inside quotes, collect characters
+			// If we're inside quotes, it clloects all the characters 
 	 
 				quotedContent += string(char)
 	
