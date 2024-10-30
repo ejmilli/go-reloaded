@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -44,30 +43,3 @@ func QuoteHandling(input string) string {
 	return strings.TrimSpace(result)
 }
 
-
-func main() {
-	// Test cases for the QuoteHandling function
-	testCases := []struct {
-		input    string
-		expected string
-	}{
-		{" ' Hello World ' ", "'Hello World'"},
-		{" 'Hello World' ", "'Hello World'"},
-		{"Hello ' World ' !", "Hello 'World'!"},
-		{"This is a test ' string  '  with quotes", "This is a test 'string' with quotes"},
-		{"A ' single ' test case.", "A 'single' test case."},
-		{"This is not ' a ' test", "This is not 'a' test"},
-		{" 'Leading and trailing spaces ' ", "'Leading and trailing spaces'"},
-		{"'  Too many   spaces  ' ", "'Too many spaces'"},
-		{"This is a sentence without quotes.", "This is a sentence without quotes."},
-		{"   ' Just spaces before and after '   ", "'Just spaces before and after'"},
-		{"I am exactly how they describe me: ' awesome '" , "I am exactly how they describe me: 'awesome'"},
-		{"As Elton John said: ' I am the most well-known homosexual in the world '", "As Elton John said: 'I am the most well-known homosexual in the world'"},
-	}
-
-	// Iterate through each test case
-	for _, tc := range testCases {
-		result := QuoteHandling(tc.input)
-		fmt.Printf("Input: %q\nExpected: %q\nOutput: %q\n\n", tc.input, tc.expected, result)
-	}
-}
