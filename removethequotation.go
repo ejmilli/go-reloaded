@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-func QuoteHandling(input string) string {
+func RemoveQuote(input string) string {
 	var result string
 	inQuotes := false
 	var quotedContent string
