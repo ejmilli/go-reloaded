@@ -2,6 +2,7 @@ package main
 
 import (
 	"math"
+	"strconv"
 )
 
 func BinCharToDec(bin rune) int {
@@ -13,9 +14,9 @@ func BinCharToDec(bin rune) int {
 	return -1
 }
 
-func BinToDecimal(bina string) int {
+func BinToDecimal(bina string) string {
 	result := 0
-	length := len(bina) // Get the length of the hex string
+	length := len(bina) // Get the length of the binary string
 
 	for i := length - 1; i >= 0; i-- {
 			char := bina[i] // Get the current character
@@ -23,7 +24,7 @@ func BinToDecimal(bina string) int {
 
 			// Error handling for invalid characters
 			if value == -1 {
-					return -1 // Return -1 for invalid input; change this if needed
+					return "-1" // Return "-1" for invalid input; change this if needed
 			}
 
 			position := length - 1 - i // Calculate position
@@ -32,6 +33,6 @@ func BinToDecimal(bina string) int {
 			result += value * int(math.Pow(2, float64(position)))
 	}
 
-	return result // Return the final decimal value
+	return strconv.Itoa(result) // Convert result to string and return it
 }
 

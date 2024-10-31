@@ -2,6 +2,7 @@ package main
 
 import (
 	"math"
+	"strconv"
 )
 
 func HexCharToDecimal(char rune) int {
@@ -23,7 +24,7 @@ func HexCharToDecimal(char rune) int {
 }
 
 
-func HexToDecimal(hexa string) int {
+func HexToDecimal(hexa string) string {
 	result := 0
 	length := len(hexa) // Get the length of the hex string
 
@@ -33,7 +34,7 @@ func HexToDecimal(hexa string) int {
 
 			// Error handling for invalid characters
 			if value == -1 {
-					return -1 // Return -1 for invalid input; change this if needed
+					return "-1" // Return -1 for invalid input; change this if needed
 			}
 
 			position := length - 1 - i // Calculate position
@@ -42,5 +43,5 @@ func HexToDecimal(hexa string) int {
 			result += value * int(math.Pow(16, float64(position)))
 	}
 
-	return result // Return the final decimal value
+	return strconv.Itoa(result) // Return the final decimal value
 }
