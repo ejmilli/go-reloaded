@@ -9,10 +9,10 @@ func HexCharToDecimal(char rune) int {
 
 	var valueStr int
 
-	// here it converts 0 -9 by saying if that if my char is 0, i will do int(char-'0') which means int(48-48) = 0
+	// here it converts 0 -9 by saying that if my char is 0, i will do int(char-'0') which means int(48-48) = 0
 	if char >= '0' && char <= '9' {
 		valueStr = int(char - '0')
-		// here it converts A- F by saying if that if my char is A, i will do int(char-'A') + 10 which means int(65-465) + 10 = 10
+		// here it converts A- F by saying if that if my char is A, i will do int(char-'A') + 10 which means int(65-65) + 10 = 10
 	} else if char >= 'A' && char <= 'F' {
 		valueStr = int(char-'A') + 10
 	}  else if char >= 'a' && char <= 'f' {

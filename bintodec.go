@@ -35,4 +35,3 @@ func BinToDecimal(bina string) string {
 
 	return strconv.Itoa(result) // Convert result to string and return it
 }
-
