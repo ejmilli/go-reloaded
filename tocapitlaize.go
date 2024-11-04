@@ -5,7 +5,7 @@ import (
 )
 
 func toCapitalize(cap string) string {
-	result := ""
+var result string 
 	for index, char := range cap {
 
 		if index == 0 {
