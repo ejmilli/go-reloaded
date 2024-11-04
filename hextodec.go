@@ -16,7 +16,7 @@ func HexCharToDecimal(char rune) int {
 	} else if char >= 'A' && char <= 'F' {
 		valueStr = int(char-'A') + 10
 	}  else if char >= 'a' && char <= 'f' {
-		valueStr = int(char-'A') + 10
+		valueStr = int(char-'a') + 10
 	} else {
 		return -1
 	}
