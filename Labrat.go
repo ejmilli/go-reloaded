@@ -60,6 +60,6 @@ func MyLab(sentence string) string {
 			}
 		}
 	}
-	edited := addAn(RemoveQuote(removePunctuation(removeTheSlice(words))))
+	edited := addAn(QuoteHandle(removePunctuation(removeTheSlice(words))))
 	return strings.Join(edited, " ")
 }
