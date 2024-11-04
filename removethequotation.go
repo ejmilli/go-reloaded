@@ -2,21 +2,33 @@ package main
 
 import "strings"
 
-func RemoveQuote(words []string) []string {
+func QuoteHandle(input []string) []string {
+	var resultSlice []string
+	inQuotes := false
+	var quotedContent []string
 
-	var QuoteCount int
-
-	for i := 0; i < len(words); i++ {
-		if QuoteCount%2 == 0 && i < len(words)-1 && strings.Contains("'", words[i]) {
-			words[i+1] = "'" + words[i+1]
-			words[i] = ""
-			QuoteCount++
-		} else if QuoteCount%2 == 1 && i > 0 && strings.Contains("'", words[i]) {
-			words[i-1] = words[i-1] + "'"
-			words[i] = ""
-			QuoteCount++
+	for _, word := range input {
+		// Check for single quote at the beginning or end of the word
+		if word == "'" {
+			if inQuotes {
+				// Closing quote found
+				inQuotes = false
+				// Join quoted content into a single string and add it to the result slice
+				resultSlice = append(resultSlice, "'"+strings.Join(quotedContent, " ")+"'")
+				quotedContent = []string{} // Reset quoted content
+			} else {
+				// Opening quote found
+				inQuotes = true
+			}
+		}
+		if inQuotes {
+			// Collect words inside quotes
+			quotedContent = append(quotedContent, word)
+		} else {
+			// Add words outside quotes directly to result slice
+			resultSlice = append(resultSlice, word)
 		}
 	}
 
-	return removeTheSlice(words)
+	return resultSlice
 }
