@@ -1,7 +1,7 @@
 package main
 
 func toUpper(up string) string {
-	result := ""
+	var result string
 	for _, char := range up {
 		if char >= 'a' && char <= 'z' {
 			char -= 32
